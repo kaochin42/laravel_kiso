@@ -18,6 +18,8 @@
 </style>
 @section('title', 'index.blade.php')
 
+
+{{--
 @section('content')
 <table>
     <tr>
@@ -29,9 +31,24 @@
     @foreach ($authors as $author)
     <tr>
         <td>{{$author->id}}</td>
-        <td>{{$author->name}}</td>
-        <td>{{$author->age}}</td>
-        <td>{{$author->nationality}}</td>
+<td>{{$author->name}}</td>
+<td>{{$author->age}}</td>
+<td>{{$author->nationality}}</td>
+</tr>
+@endforeach
+</table>
+@endsection
+--}}
+
+
+@section('content')
+<table>
+    <tr>
+        <th>Data</th>
+    </tr>
+    @foreach ($authors as $author)
+    <tr>
+        <td>{{$author->getDetail()}}</td>
     </tr>
     @endforeach
 </table>
