@@ -34,4 +34,14 @@ class AuthorController extends Controller
         Author::find($request->id)->update($form);
         return redirect('/');
     }
+    // 削除用ページの表示
+    public function delete(Request $request){
+        $author = Author::find($request->id);
+        return view('delete', ['author' => $author]);
+    }
+    // 削除機能
+    public function remove(Request $request) {
+        Author::find($request->id)->delete();
+        return redirect('/');
+    }
 }
