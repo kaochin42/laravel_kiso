@@ -20,7 +20,7 @@ class AuthorController extends Controller
     }
     // データ一覧ページの表示
     public function index() {
-        $authors = Author::all();
+        $authors = Author::Paginate(4);
         return view('index', ['authors' => $authors]);
     }
     //データ編集ページの表示
